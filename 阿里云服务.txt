@@ -1,0 +1,12 @@
+
+
+
+//服务器地址
+https://signin.aliyun.com/35184972.onaliyun.com/login.htm
+
+用户名 testa@35184972.onaliyun.com 
+ 
+ 密码 12345678
+ 
+ 
+ 远程连接密码（6位数字）、公网IP、服务器账号、服务器密码（有特殊符号，数字，字母的那个）
