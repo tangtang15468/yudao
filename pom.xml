@@ -44,6 +44,7 @@
         <spring.boot.version>2.7.17</spring.boot.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <swagger.version>2.7.0</swagger.version>
     </properties>
 
     <dependencyManagement>

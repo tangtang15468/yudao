@@ -4,7 +4,10 @@ import cn.iocoder.yudao.framework.mq.redis.core.RedisMQTemplate;
 import cn.iocoder.yudao.framework.websocket.core.sender.AbstractWebSocketMessageSender;
 import cn.iocoder.yudao.framework.websocket.core.sender.WebSocketMessageSender;
 import cn.iocoder.yudao.framework.websocket.core.session.WebSocketSessionManager;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+
+import java.io.FileInputStream;
 
 /**
  * 基于 Redis 的 {@link WebSocketMessageSender} 实现类

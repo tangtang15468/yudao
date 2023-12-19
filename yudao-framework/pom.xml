@@ -41,6 +41,9 @@
         <module>yudao-spring-boot-starter-websocket</module>
         <module>yudao-spring-boot-starter-desensitize</module>
         <module>yudao-spring-boot-starter-validator</module>
+        <module>yudao-spring-boot-starter-im-client</module>
+        <module>yudao-spring-boot-starter-im-common</module>
+        <module>yudao-spring-boot-starter-im-platform</module>
     </modules>
 
     <artifactId>yudao-framework</artifactId>

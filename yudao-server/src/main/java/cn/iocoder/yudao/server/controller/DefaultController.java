@@ -21,6 +21,11 @@ public class DefaultController {
                 "[工作流模块 yudao-module-bpm - 已禁用][参考 https://doc.iocoder.cn/bpm/ 开启]");
     }
 
+    @RequestMapping("/test/interface")
+    public CommonResult tse() {
+        return CommonResult.success(null);
+    }
+
     @RequestMapping("/admin-api/mp/**")
     public CommonResult<Boolean> mp404() {
         return CommonResult.error(NOT_IMPLEMENTED.getCode(),
