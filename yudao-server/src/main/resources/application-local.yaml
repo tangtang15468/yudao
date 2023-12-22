@@ -6,6 +6,7 @@ server:
 spring:
   # 数据源配置项
   autoconfigure:
+  aop:
     exclude:
       - com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure # 排除 Druid 的自动配置，使用 dynamic-datasource-spring-boot-starter 配置多数据源
       - org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration # 排除积木报表带来的 MongoDB 的自动配置
@@ -263,10 +264,10 @@ justauth:
     prefix: 'social_auth_state:' # 缓存前缀，目前只对 Redis 缓存生效，默认 JUSTAUTH::STATE::
     timeout: 24h # 超时时长，目前只对 Redis 缓存生效，默认 3 分钟
 minio:
-  endpoint: http://127.0.0.1:9001 #内网地址
-  public: http://127.0.0.1:9001  #外网访问地址
-  accessKey: admin
-  secretKey: 12345678
+  endpoint: http://192.168.36.5:9000/ #内网地址
+  public: http://192.168.36.5:9000/  #外网访问地址
+  accessKey: minioroot
+  secretKey: minioroot
   bucketName: box-im
   imagePath: image
   filePath: file
@@ -274,6 +275,13 @@ minio:
 webrtc:
   iceServers:
     - urls: stun:stun.l.google.com:19302
+jwt:
+  accessToken:
+    expireIn: 1800 #半个小时
+    secret: MIIBIjANBgkq
+  refreshToken:
+    expireIn: 604800 #7天
+    secret: IKDiqVmn0VFU
 
 # TODO 赤焰：这个配置的目的是？
 #ureport配置
