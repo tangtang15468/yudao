@@ -1,10 +1,10 @@
 package cn.iocoder.yudao.server.service.impl;
 
 import cn.iocoder.yudao.server.contant.RedisKey;
-import cn.iocoder.yudao.server.controller.exception.GlobalException;
 import cn.iocoder.yudao.server.entity.Friend;
 import cn.iocoder.yudao.server.entity.User;
 import cn.iocoder.yudao.server.enums.ResultCode;
+import cn.iocoder.yudao.server.exception.GlobalException;
 import cn.iocoder.yudao.server.mapper.FriendMapper;
 import cn.iocoder.yudao.server.mapper.ImUserMapper;
 import cn.iocoder.yudao.server.service.IFriendService;

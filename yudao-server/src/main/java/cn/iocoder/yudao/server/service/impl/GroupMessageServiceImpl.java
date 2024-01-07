@@ -5,7 +5,6 @@ import cn.hutool.core.util.StrUtil;
 import cn.iocoder.yudao.server.client.IMClient;
 import cn.iocoder.yudao.server.contant.IMConstant;
 import cn.iocoder.yudao.server.contant.RedisKey;
-import cn.iocoder.yudao.server.controller.exception.GlobalException;
 import cn.iocoder.yudao.server.dto.GroupMessageDTO;
 import cn.iocoder.yudao.server.entity.Group;
 import cn.iocoder.yudao.server.entity.GroupMember;
@@ -13,6 +12,7 @@ import cn.iocoder.yudao.server.entity.GroupMessage;
 import cn.iocoder.yudao.server.enums.MessageStatus;
 import cn.iocoder.yudao.server.enums.MessageType;
 import cn.iocoder.yudao.server.enums.ResultCode;
+import cn.iocoder.yudao.server.exception.GlobalException;
 import cn.iocoder.yudao.server.mapper.GroupMessageMapper;
 import cn.iocoder.yudao.server.model.IMGroupMessage;
 import cn.iocoder.yudao.server.model.IMUserInfo;
@@ -33,6 +33,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -48,7 +49,6 @@ public class GroupMessageServiceImpl extends ServiceImpl<GroupMessageMapper, Gro
     private final RedisTemplate<String, Object> redisTemplate;
     private final IMClient imClient;
     private final SensitiveFilterUtil sensitiveFilterUtil;
-
     @Override
     public Long sendMessage(GroupMessageDTO dto) {
         UserSession session = SessionContext.getSession();

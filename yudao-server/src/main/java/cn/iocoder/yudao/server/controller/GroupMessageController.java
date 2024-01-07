@@ -16,7 +16,7 @@ import java.util.List;
 
 @Api(tags = "群聊消息")
 @RestController
-@RequestMapping("/message/group")
+@RequestMapping("/im/v1/message/group")
 @RequiredArgsConstructor
 public class GroupMessageController {
 

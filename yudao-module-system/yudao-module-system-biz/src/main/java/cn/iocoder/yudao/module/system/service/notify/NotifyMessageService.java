@@ -94,4 +94,5 @@ public interface NotifyMessageService {
      */
     int updateAllNotifyMessageRead(Long userId, Integer userType);
 
+    NotifyMessageDO getMessageByUserId(Long userId);
 }

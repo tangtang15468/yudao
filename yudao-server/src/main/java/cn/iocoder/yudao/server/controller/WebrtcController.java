@@ -13,7 +13,7 @@ import java.util.List;
 
 @Api(tags = "webrtc视频单人通话")
 @RestController
-@RequestMapping("/webrtc/private")
+@RequestMapping("/im/v1/webrtc/private")
 @RequiredArgsConstructor
 public class WebrtcController {
 

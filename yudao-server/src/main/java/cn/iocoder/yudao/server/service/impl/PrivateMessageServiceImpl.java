@@ -2,13 +2,13 @@ package cn.iocoder.yudao.server.service.impl;
 
 import cn.iocoder.yudao.server.client.IMClient;
 import cn.iocoder.yudao.server.contant.IMConstant;
-import cn.iocoder.yudao.server.controller.exception.GlobalException;
 import cn.iocoder.yudao.server.dto.PrivateMessageDTO;
 import cn.iocoder.yudao.server.entity.Friend;
 import cn.iocoder.yudao.server.entity.PrivateMessage;
 import cn.iocoder.yudao.server.enums.MessageStatus;
 import cn.iocoder.yudao.server.enums.MessageType;
 import cn.iocoder.yudao.server.enums.ResultCode;
+import cn.iocoder.yudao.server.exception.GlobalException;
 import cn.iocoder.yudao.server.mapper.PrivateMessageMapper;
 import cn.iocoder.yudao.server.model.IMPrivateMessage;
 import cn.iocoder.yudao.server.model.IMUserInfo;
@@ -27,6 +27,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DateUtils;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,7 +38,6 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class PrivateMessageServiceImpl extends ServiceImpl<PrivateMessageMapper, PrivateMessage> implements IPrivateMessageService {
-
     private final IFriendService friendService;
     private final IMClient imClient;
     private final SensitiveFilterUtil sensitiveFilterUtil;

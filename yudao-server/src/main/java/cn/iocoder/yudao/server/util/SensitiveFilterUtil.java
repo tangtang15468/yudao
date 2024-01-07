@@ -64,7 +64,6 @@ public final class SensitiveFilterUtil {
             subNodes.put(c, node);
         }
 
-        // 获取子节点
         public TrieNode getSubNode(Character c) {
             return subNodes.get(c);
         }

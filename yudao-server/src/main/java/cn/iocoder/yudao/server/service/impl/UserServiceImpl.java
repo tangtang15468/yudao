@@ -2,7 +2,6 @@ package cn.iocoder.yudao.server.service.impl;
 
 import cn.iocoder.yudao.server.client.IMClient;
 import cn.iocoder.yudao.server.config.JwtProperties;
-import cn.iocoder.yudao.server.controller.exception.GlobalException;
 import cn.iocoder.yudao.server.dto.LoginDTO;
 import cn.iocoder.yudao.server.dto.ModifyPwdDTO;
 import cn.iocoder.yudao.server.dto.RegisterDTO;
@@ -11,6 +10,7 @@ import cn.iocoder.yudao.server.entity.GroupMember;
 import cn.iocoder.yudao.server.entity.User;
 import cn.iocoder.yudao.server.enums.IMTerminalType;
 import cn.iocoder.yudao.server.enums.ResultCode;
+import cn.iocoder.yudao.server.exception.GlobalException;
 import cn.iocoder.yudao.server.mapper.ImUserMapper;
 import cn.iocoder.yudao.server.service.IFriendService;
 import cn.iocoder.yudao.server.service.IGroupMemberService;
@@ -32,6 +32,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -53,6 +55,8 @@ public class UserServiceImpl extends ServiceImpl<ImUserMapper, User> implements 
         if (null == user) {
             throw new GlobalException(ResultCode.PROGRAM_ERROR, "用户不存在");
         }
+        String encode = passwordEncoder.encode(dto.getPassword());
+        System.out.println(encode);
         if (!passwordEncoder.matches(dto.getPassword(), user.getPassword())) {
             throw new GlobalException(ResultCode.PASSWOR_ERROR);
         }

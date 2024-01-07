@@ -16,7 +16,7 @@ import java.util.List;
 
 @Api(tags = "私聊消息")
 @RestController
-@RequestMapping("/message/private")
+@RequestMapping("/im/v1/message/private")
 @RequiredArgsConstructor
 public class PrivateMessageController {
 

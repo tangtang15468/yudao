@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 @Api(tags = "好友")
 @RestController
-@RequestMapping("/friend")
+@RequestMapping("/im/v1/friend")
 public class FriendController {
 
     @Qualifier("friendServiceImpl")
@@ -31,9 +31,8 @@ public class FriendController {
     @GetMapping("/list")
     @ApiOperation(value = "好友列表", notes = "获取好友列表")
     public Result<List<FriendVO>> findFriends() {
-//        Long userId = SessionContext.getSession().getUserId();
-        Long loginUserId = SecurityFrameworkUtils.getLoginUserId();
-        List<Friend> friends = friendService.findFriendByUserId(loginUserId);
+        Long userId = SessionContext.getSession().getUserId();
+        List<Friend> friends = friendService.findFriendByUserId(userId);
         List<FriendVO> vos = friends.stream().map(f -> {
             FriendVO vo = new FriendVO();
             vo.setId(f.getFriendId());

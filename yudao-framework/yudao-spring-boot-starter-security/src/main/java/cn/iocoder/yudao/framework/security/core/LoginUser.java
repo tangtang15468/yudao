@@ -3,6 +3,7 @@ package cn.iocoder.yudao.framework.security.core;
 import cn.hutool.core.map.MapUtil;
 import cn.iocoder.yudao.framework.common.enums.UserTypeEnum;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.common.collect.Collections2;
 import lombok.Data;
 
 import java.util.HashMap;

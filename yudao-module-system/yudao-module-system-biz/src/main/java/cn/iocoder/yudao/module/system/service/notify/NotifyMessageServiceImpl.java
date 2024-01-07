@@ -11,6 +11,7 @@ import org.springframework.validation.annotation.Validated;
 
 import javax.annotation.Resource;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -70,6 +71,14 @@ public class NotifyMessageServiceImpl implements NotifyMessageService {
     @Override
     public int updateAllNotifyMessageRead(Long userId, Integer userType) {
         return notifyMessageMapper.updateListRead(userId, userType);
+    }
+
+    @Override
+    public NotifyMessageDO getMessageByUserId(Long userId) {
+        HashMap<String, Object> stringObjectHashMap = new HashMap<>();
+        stringObjectHashMap.putIfAbsent("userId",userId);
+        return notifyMessageMapper.selectByMap(stringObjectHashMap).get(0);
+
     }
 
 }

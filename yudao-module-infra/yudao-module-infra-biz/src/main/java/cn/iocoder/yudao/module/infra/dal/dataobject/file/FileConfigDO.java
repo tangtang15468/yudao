@@ -50,7 +50,7 @@ public class FileConfigDO extends BaseDO {
     private Boolean master;
 
     /**
-     * 支付渠道配置
+//     * 支付渠道配置
      */
     @TableField(typeHandler = JacksonTypeHandler.class)
     private FileClientConfig config;

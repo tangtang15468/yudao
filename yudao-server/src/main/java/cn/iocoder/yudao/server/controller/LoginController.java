@@ -17,6 +17,7 @@ import javax.validation.Valid;
 @Api(tags = "用户登录和注册")
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/im/v1")
 public class LoginController {
 
     private final IUserService userService;

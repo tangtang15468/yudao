@@ -55,7 +55,6 @@ public class AuthLoginReqVO {
      * 开启验证码的 Group
      */
     public interface CodeEnableGroup {}
-
     @AssertTrue(message = "授权码不能为空")
     public boolean isSocialCodeValid() {
         return socialType == null || StrUtil.isNotEmpty(socialCode);

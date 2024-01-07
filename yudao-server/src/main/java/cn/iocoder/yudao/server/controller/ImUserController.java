@@ -20,7 +20,7 @@ import java.util.List;
 
 @Api(tags = "用户")
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/im/v1/user")
 @RequiredArgsConstructor
 public class ImUserController {
 

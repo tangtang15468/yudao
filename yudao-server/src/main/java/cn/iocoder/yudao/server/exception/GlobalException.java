@@ -1,4 +1,4 @@
-package cn.iocoder.yudao.server.controller.exception;
+package cn.iocoder.yudao.server.exception;
 
 import cn.iocoder.yudao.server.enums.ResultCode;
 import lombok.Data;

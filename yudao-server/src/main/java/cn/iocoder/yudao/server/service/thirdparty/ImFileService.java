@@ -1,9 +1,9 @@
 package cn.iocoder.yudao.server.service.thirdparty;
 
 import cn.iocoder.yudao.server.contant.Constant;
-import cn.iocoder.yudao.server.controller.exception.GlobalException;
 import cn.iocoder.yudao.server.enums.FileType;
 import cn.iocoder.yudao.server.enums.ResultCode;
+import cn.iocoder.yudao.server.exception.GlobalException;
 import cn.iocoder.yudao.server.session.SessionContext;
 import cn.iocoder.yudao.server.util.FileUtil;
 import cn.iocoder.yudao.server.util.ImageUtil;
